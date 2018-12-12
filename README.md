@@ -1,3 +1,12 @@
+In the neural network terminology:
+
+one epoch = one forward pass and one backward pass of all the training examples
+batch size = the number of training examples in one forward/backward pass. The higher the batch size, the more memory space you'll need.
+number of iterations = number of passes, each pass using [batch size] number of examples. To be clear, one pass = one forward pass + one backward pass (we do not count the forward pass and backward pass as two different passes).
+Example: if you have 1000 training examples, and your batch size is 500, then it will take 2 iterations to complete 1 epoch.
+
+For instance, let's say you have 1050 training samples and you want to set up a batch_size equal to 100. The algorithm takes the first 100 samples (from 1st to 100th) from the training dataset and trains the network. Next it takes the second 100 samples (from 101st to 200th) and trains the network again. We can keep doing this procedure until we have propagated through all samples of the network. A problem usually happens with the last set of samples. In our example we've used 1050 which is not divisible by 100 without remainder. The simplest solution is just to get the final 50 samples and train the network.
+
 # keras-Sequential
 
 The sequential API allows you to create models layer-by-layer for most problems. It is limited in that it does not allow you to create models that share layers or have multiple inputs or outputs.
@@ -120,6 +129,3 @@ The output shape now will be : model.output_shape == (None, 65536)
 
 because due to flatten the output dimension would be (None, ). So to flatten the now 4D (64, 32, 32) all the remaining dimension would be clubbed as one by multiplying.
 So, 64 X 32 X 32 = 65536.
-
-
-
