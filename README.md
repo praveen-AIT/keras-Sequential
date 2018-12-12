@@ -50,21 +50,35 @@ model.add(Convolution1D(32, 3, border_mode='same'))
 
 Arguments
 
-# nb_filter: Number of convolution kernels to use (dimensionality of the output).
-# filter_length: The extension (spatial or temporal) of each filter.
-# init: name of initialization function for the weights of the layer (see initializations), or alternatively, Theano function to use for weights initialization. This parameter is only relevant if you don't pass a weights argument.
-# activation: name of activation function to use (see activations), or alternatively, elementwise Theano function. If you don't specify anything, no activation is applied (ie. "linear" activation: a(x) = x).
-# weights: list of numpy arrays to set as initial weights.
-# border_mode: 'valid', 'same' or 'full' ('full' requires the Theano backend).
-# subsample_length: factor by which to subsample output.
-# W_regularizer: instance of WeightRegularizer (eg. L1 or L2 regularization), applied to the main weights matrix.
-# b_regularizer: instance of WeightRegularizer, applied to the bias.
-# activity_regularizer: instance of ActivityRegularizer, applied to the network output.
-# W_constraint: instance of the constraints module (eg. maxnorm, nonneg), applied to the main weights matrix.
-# b_constraint: instance of the constraints module, applied to the bias.
-# bias: whether to include a bias (i.e. make the layer affine rather than linear).
-# input_dim: Number of channels/dimensions in the input. Either this argument or the keyword argument input_shapemust be provided when using this layer as the first layer in a model.
-# input_length: Length of input sequences, when it is constant. This argument is required if you are going to connect  Flatten then Dense layers upstream (without it, the shape of the dense outputs cannot be computed).
+nb_filter: Number of convolution kernels to use (dimensionality of the output).
+
+filter_length: The extension (spatial or temporal) of each filter.
+
+init: name of initialization function for the weights of the layer (see initializations), or alternatively, Theano function to use for weights initialization. This parameter is only relevant if you don't pass a weights argument.
+
+activation: name of activation function to use (see activations), or alternatively, elementwise Theano function. If you don't specify anything, no activation is applied (ie. "linear" activation: a(x) = x).
+
+weights: list of numpy arrays to set as initial weights.
+
+border_mode: 'valid', 'same' or 'full' ('full' requires the Theano backend).
+
+subsample_length: factor by which to subsample output.
+
+W_regularizer: instance of WeightRegularizer (eg. L1 or L2 regularization), applied to the main weights matrix.
+
+b_regularizer: instance of WeightRegularizer, applied to the bias.
+
+activity_regularizer: instance of ActivityRegularizer, applied to the network output.
+
+W_constraint: instance of the constraints module (eg. maxnorm, nonneg), applied to the main weights matrix.
+
+b_constraint: instance of the constraints module, applied to the bias.
+
+bias: whether to include a bias (i.e. make the layer affine rather than linear).
+
+input_dim: Number of channels/dimensions in the input. Either this argument or the keyword argument input_shapemust be provided when using this layer as the first layer in a model.
+
+input_length: Length of input sequences, when it is constant. This argument is required if you are going to connect  Flatten then Dense layers upstream (without it, the shape of the dense outputs cannot be computed).
 
 # Input shape
 
